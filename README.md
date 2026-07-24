@@ -1,5 +1,3 @@
-作者:M0Xsystem 梦想
-特别鸣谢:M0Xsystem 零
 
 要求
 1.	你有电脑
