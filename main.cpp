@@ -13,7 +13,7 @@ void setupADBPath() {
     if (access((adbDir + "\\adb.exe").c_str(), 0) == 0) {
         _chdir(adbDir.c_str());
     } else {
-        cout << "ÎÄ¼þÈ±Ê§£¬ÇëÖØÐÂÏÂÔØ";
+        cout << "æ–‡ä»¶ç¼ºå¤±ï¼Œè¯·é‡æ–°ä¸‹è½½";
         return;
     }
 }
@@ -25,15 +25,12 @@ void executeAndWait(const string& cmd, int waitMs = 0) {
 
 int main(){
     setupADBPath();
-    cout << "»¶Ó­Ê¹ÓÃÈ«×Ô¶¯×ÀÃæ²¿Êð¹¤¾ß\n";
-    cout << "×÷Õß:M0Xsystem ÃÎÏë\n";
-    cout << "ÌØ±ðÃùÐ»:M0Xsystem Áã\n";
-    cout << "¹ËÎÊ:¶¹°üAI\n";
-    cout << "ÊäÈëy¿ªÊ¼²¿Êð:";
+    cout << "æ¬¢è¿Žä½¿ç”¨å…¨è‡ªåŠ¨æ¡Œé¢éƒ¨ç½²å·¥å…·\n";
+    cout << "è¾“å…¥yå¼€å§‹éƒ¨ç½²:";
     char cif;
     cin >> cif;
     if (cif != 'y') {
-        cout << "¸ÐÐ»Ê¹ÓÃ";
+        cout << "æ„Ÿè°¢ä½¿ç”¨";
         return 0;
     }
     system("cls");
@@ -42,17 +39,17 @@ int main(){
     executeAndWait("adb devices", 2000);
     executeAndWait("adb shell pm uninstall --user 0 com.yangcong345.cloud.launcher", 3000);
     
-    cout << "\n ¿ªÊ¼ÏÂÒ»¸ö²½Öè\n";
+    cout << "\n å¼€å§‹ä¸‹ä¸€ä¸ªæ­¥éª¤\n";
     string apkAbsolutePath = g_programRootPath + "\\desktop.apk";
     string installCmd = "adb install -r \"" + apkAbsolutePath + "\"";
     executeAndWait(installCmd, 5000);
     
-    cout << "\n ¿ªÊ¼ÏÂÒ»¸ö²½Öè\n";
+    cout << "\n å¼€å§‹ä¸‹ä¸€ä¸ªæ­¥éª¤\n";
     Sleep(5000);
     string setHomeCmd = "adb shell cmd package set-home-activity amirz.shade/.ShadeLauncher";
     executeAndWait(setHomeCmd, 2000);
     
-    cout << "\n ¿ªÊ¼ÏÂÒ»¸ö²½Öè Éè±¸»áÖØÆô\n";
+    cout << "\n å¼€å§‹ä¸‹ä¸€ä¸ªæ­¥éª¤ è®¾å¤‡ä¼šé‡å¯\n";
     executeAndWait("adb reboot");
     return 0;
 }
