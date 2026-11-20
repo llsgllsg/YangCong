@@ -10,7 +10,8 @@
 首先，你要弄把整个压缩包解压
 找到根目录一个叫做platform-tools的文件夹
 双击打开
-在上方地址栏输入cmd
+在上方地址栏输入cmd  
+自动部署需要先下载adb并放进命名为platform-tools的文件夹
 
 <img width="445" height="292" alt="image" src="https://github.com/user-attachments/assets/73aad90d-c0a3-4240-b506-cb55762352fd" />
 
